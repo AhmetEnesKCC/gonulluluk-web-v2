@@ -10,7 +10,8 @@ const MissionSection = () => {
           İTÜ Gönüllülük Kulübü 2004 yılında kurulmuş bir öğrenci kulübüdür.
           Kulüp kurulduğu günden bu yana gerçekleştirdiği projelerle hem
           sosyal-kültürel sorunlara karşı duyarsız kalmamış hem de gönüllülük
-          bilincini başta İTÜ'de olmak üzere her yerde yaymayı amaç edinmiştir.
+          bilincini başta İTÜ{"'"}de olmak üzere her yerde yaymayı amaç
+          edinmiştir.
           <span className="text-black text-opacity-30 hover:underline">
             {" "}
             Daha fazla

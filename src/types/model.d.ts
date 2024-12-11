@@ -1,6 +1,7 @@
 export type ProjectType = {
   name: string;
   logo: string;
+  shortName?: string;
   id: number;
 };
 

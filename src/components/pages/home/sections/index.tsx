@@ -16,7 +16,7 @@ const getProjectData = async (): Promise<{
     });
     const json = await res.json();
     return {
-      data: json?.data.filter((d: any) => d.shortName !== "IGK"),
+      data: json?.data.filter((d: ProjectType) => d.shortName !== "IGK"),
       success: true,
     };
   } catch {
@@ -42,7 +42,7 @@ const HomeSections = async () => {
         <ProjectSection key={p.id} projectData={p} odd={i % 2 === 1} />
       ))}
       <div className="px-page-padding">
-      <JoinSection />
+        <JoinSection />
       </div>
     </div>
   );

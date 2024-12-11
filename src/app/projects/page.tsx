@@ -11,7 +11,7 @@ const getProjectData = async (): Promise<ProjectDetailType[]> => {
     });
     // Filter out IGK
     const json = await res.json();
-    return json?.data.filter((d: any) => d.shortName !== "IGK");
+    return json?.data.filter((d: ProjectDetailType) => d.shortName !== "IGK");
   } catch {
     throw new Error("could not get data");
   }

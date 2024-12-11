@@ -2,22 +2,35 @@ import JoinSection from "@/components/pages/home/sections/join-section";
 import ProjectBook from "@/components/pages/projects/project-book";
 import { ProjectDetailType } from "@/types/model";
 import Image from "next/image";
-import React from "react";
+import React, { Suspense } from "react";
 
 const getProjectData = async (): Promise<ProjectDetailType[]> => {
   try {
     const res = await fetch("https://cdn.itugonulluluk.com/projects", {
-      cache: "no-cache",
+      cache: "default",
     });
-    // Filter out IGK
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch data: ${res.status} ${res.statusText}`);
+    }
+
     const json = await res.json();
-    return json?.data.filter((d: ProjectDetailType) => d.shortName !== "IGK");
-  } catch {
-    throw new Error("could not get data");
+    if (!json?.data) {
+      throw new Error("Invalid data format received from API");
+    }
+
+    return json.data.filter((d: ProjectDetailType) => d.shortName !== "IGK");
+  } catch (error) {
+    console.error("Error fetching project data:", error);
+    throw new Error(
+      `Could not get project data: ${
+        error instanceof Error ? error.message : "Unknown error"
+      }`
+    );
   }
 };
 
-const Projects = async () => {
+const Page = async () => {
   const projects = await getProjectData();
 
   return (
@@ -45,7 +58,9 @@ const Projects = async () => {
         aktif katılımlarıyla bu projelerin başarısını sağlıyor ve toplumsal
         dönüşüm için önemli bir güç oluşturuyorlar.
       </p>
-      <ProjectBook projects={projects} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ProjectBook projects={projects} />
+      </Suspense>
       <div className="px-page-padding py-8">
         <JoinSection />
       </div>
@@ -53,4 +68,4 @@ const Projects = async () => {
   );
 };
 
-export default Projects;
+export default Page;

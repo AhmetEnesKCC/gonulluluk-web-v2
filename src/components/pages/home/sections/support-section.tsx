@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const MissionSection = () => {
+const SupportSection = () => {
   return (
     <div className="bg-support-bg bg-opacity-10 rounded-full min-h-[360px] pl-[120px] pr-[32px] items-center py-6 flex flex-row-reverse gap-x-[64px]">
       <div className="flex-1 self-stretch flex flex-col py-[32px] justify-center gap-y-[32px]">
@@ -40,4 +40,4 @@ const MissionSection = () => {
   );
 };
 
-export default MissionSection;
+export default SupportSection;

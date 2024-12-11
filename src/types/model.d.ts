@@ -3,3 +3,11 @@ export type ProjectType = {
   logo: string;
   id: number;
 };
+
+export type ProjectDetailType = {
+  name: string;
+  description: string;
+  shortName: string;
+  logo: string;
+  id: number;
+};

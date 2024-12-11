@@ -4,6 +4,7 @@ export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/container/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -26,6 +27,7 @@ export default {
         "section-bg": "#FE8921",
         "mission-bg": "#4C79B0",
         "support-bg": "#DF1529",
+        "join-bg": "#E6E6E6",
         "footer-bg": "#E6E6E6",
         divider: "#E6E6E6",
         "footer-title": "#474954",

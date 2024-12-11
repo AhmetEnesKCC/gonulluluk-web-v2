@@ -4,6 +4,13 @@ export type HeaderLinkType = {
   soon?: boolean;
 };
 
+export type FooterLinkType = {
+  type: "link" | "mail";
+  link: string;
+  icon: React.JSX.Element;
+  protocol?: "https://" | "http://";
+};
+
 export type HomeStatType = {
   label: string;
   stat: number;

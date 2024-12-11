@@ -3,6 +3,7 @@ import ProjectSection from "./project-section";
 import { ProjectType } from "@/types/model";
 import MissionSection from "./mission-section";
 import SupportSection from "./support-section";
+import JoinSection from "./join-section";
 
 const getProjectData = async (): Promise<{
   data?: ProjectType[];
@@ -40,6 +41,9 @@ const HomeSections = async () => {
       {projectData.data?.map((p, i) => (
         <ProjectSection key={p.id} projectData={p} odd={i % 2 === 1} />
       ))}
+      <div className="px-page-padding">
+      <JoinSection />
+      </div>
     </div>
   );
 };

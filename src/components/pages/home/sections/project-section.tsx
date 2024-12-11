@@ -1,6 +1,7 @@
 import { ProjectType } from "@/types/model";
 import clsx from "clsx";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const MissionSection = ({
@@ -29,10 +30,13 @@ const MissionSection = ({
             odit, nostrum, error laborum aliquam aliquid quo laudantium officia
             impedit cum reiciendis! Doloremque iusto fugiat ipsa doloribus
             expedita ipsam, illo nostrum?
-            <span className="text-black text-opacity-30 hover:underline">
+            <Link
+              href={`/projects?project=${projectData.id}#project-book`}
+              className="text-black text-opacity-30 hover:underline"
+            >
               {" "}
               Daha fazla
-            </span>
+            </Link>
           </p>
         </div>
         <div className="relative">
